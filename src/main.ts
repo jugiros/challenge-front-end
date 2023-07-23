@@ -14,7 +14,7 @@ import { createPinia } from 'pinia'
 // Vuetify
 const vuetify = createVuetify({
   components,
-  directives,
+  directives
 })
 
 // Pinia
