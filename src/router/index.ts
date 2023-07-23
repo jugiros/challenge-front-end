@@ -16,9 +16,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: loadComponent('AboutView')
+    path: '/results',
+    name: 'results',
+    component: loadComponent('ResultsView')
   },
   {
     path: '/:catchAll(.*)',

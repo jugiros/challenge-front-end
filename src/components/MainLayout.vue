@@ -19,7 +19,12 @@
                 v-for="(item, i) in items"
                 :key="i"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>
+            <router-link
+                    style="cursor: pointer; text-decoration: none;" :to="item.to">
+              {{item.title}}
+            </router-link>
+          </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -31,10 +36,9 @@
 
 <script setup lang="ts">
 const items = [
-  {title: 'Click Me'},
-  {title: 'Click Me'},
-  {title: 'Click Me'},
-  {title: 'Click Me 2'}
+  {title: 'Inicio', to: '/'},
+  {title: 'Resultados', to: '/results'},
+  {title: 'Error', to: '/error-page'}
 ]
 </script>
 
