@@ -1,6 +1,8 @@
 <template>
   <main-layout/>
-  <router-view/>
+  <v-container>
+    <router-view/>
+  </v-container>
 </template>
 
 <script setup lang="ts">
