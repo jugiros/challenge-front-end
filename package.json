@@ -10,7 +10,8 @@
     "test:unit": "nightwatch src/components/**/__tests__/*"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vuetify": "3.3.9"
   },
   "devDependencies": {
     "@nightwatch/vue": "0.4.5",
