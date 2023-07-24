@@ -28,9 +28,6 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <v-btn icon>
-      <v-icon color="white">mdi-export</v-icon>
-    </v-btn>
   </v-toolbar>
 </template>
 

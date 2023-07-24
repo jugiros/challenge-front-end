@@ -1,11 +1,9 @@
 import {ref} from "vue";
 import {defineStore} from "pinia";
 
-export const useCounterStore = defineStore('counter', () => {
+export const citiesStore = defineStore('counter', () => {
   const cities = ref([
-    {"name": "Cuenca"},
-    {"name": "Quito"},
-    {"name": "Guayaquil"}
+    "Cuenca", "Quito", "Guayaquil"
   ])
 
   return {cities}
