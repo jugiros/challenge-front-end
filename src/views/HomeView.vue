@@ -80,7 +80,6 @@ import { citiesStore } from "@/store/cities";
 import { format } from "date-fns";
 import router from "@/router";
 const items = citiesStore().cities;
-const currentDate = new Date();
 
 const initialState = {
   originCity: null,
