@@ -3,7 +3,7 @@
     <v-img
       class="align-end text-white"
       height="200"
-      src="https://wallpapers.com/images/featured/airplane-4k-bu4x1hj15439eul8.jpg"
+      :src="require('../assets/card-wallpaper.jpg')"
       cover
     >
       <v-card-title>Busca tu vuelo</v-card-title>
@@ -64,9 +64,7 @@
           </v-col>
         </v-row>
         <v-container align="center">
-          <v-btn class="me-4" @click="v$.$validate" color="primary">
-            BUSCAR
-          </v-btn>
+          <v-btn class="me-4" @click="search" color="primary"> BUSCAR </v-btn>
           <v-btn @click="clear" color="warning"> LIMPIAR </v-btn>
         </v-container>
       </form>
@@ -79,15 +77,16 @@ import { reactive, ref } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { helpers, required } from "@vuelidate/validators";
 import { citiesStore } from "@/store/cities";
-
+import { format } from "date-fns";
+import router from "@/router";
 const items = citiesStore().cities;
+const currentDate = new Date();
 
 const initialState = {
   originCity: null,
   destinyCity: null,
-  departureDate: null,
-  returnDate: null
-
+  departureDate: format(new Date(), "yyyy-MM-dd"),
+  returnDate: format(new Date(), "yyyy-MM-dd"),
 };
 
 const state = reactive({
@@ -108,16 +107,10 @@ const rules = {
     ),
   },
   departureDate: {
-    required: helpers.withMessage(
-        "Debe agregar la fecha de partida",
-        required
-    ),
+    required: helpers.withMessage("Debe agregar la fecha de partida", required),
   },
   returnDate: {
-    required: helpers.withMessage(
-        "Debe agregar la fecha de regreso",
-        required
-    ),
+    required: helpers.withMessage("Debe agregar la fecha de regreso", required),
   },
 };
 
@@ -130,6 +123,14 @@ const clear = () => {
     state[key] = value;
   }
 };
+
+const search = () => {
+  v$.value.$validate().then(res => {
+    if (res) {
+      router.push('/results')
+    }
+  })
+};
 </script>
 
 <style>
@@ -139,5 +140,10 @@ const clear = () => {
 .v-img__placeholder,
 .v-img__error {
   filter: brightness(0.6) !important;
+}
+.v-text-field .v-field--no-label input,
+.v-text-field .v-field--active input {
+  opacity: 1;
+  margin-top: 0px;
 }
 </style>
