@@ -10,8 +10,7 @@ export const resultStore = defineStore("result", () => {
         { key: "Duración", val: "60 min" },
       ],
       airline: "Avianca",
-      image:
-        "https://media.istockphoto.com/id/155439315/es/foto/avi%C3%B3n-de-pasajeros-volando-sobre-nubes-durante-la-puesta-del-sol.jpg?s=612x612&w=0&k=20&c=E6zuCTGyaqlKa7_UDwg6vDVNFe5U53tUJZRhinQ02gg=",
+      image: require("../assets/airline-1.jpg"),
     },
     {
       data: [
@@ -20,8 +19,7 @@ export const resultStore = defineStore("result", () => {
         { key: "Duración", val: "120 min" },
       ],
       airline: "Tame",
-      image:
-        "https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1650030686687.jpg",
+      image: require("../assets/airline-2.jpg"),
     },
     {
       data: [
@@ -30,8 +28,7 @@ export const resultStore = defineStore("result", () => {
         { key: "Duración", val: "180 min" },
       ],
       airline: "Latam",
-      image:
-        "https://imageio.forbes.com/specials-images/imageserve/5d8bac4f22254b0008e17703/Low-Angle-View-Of-Airplane-Flying-Against-Sky-During-Sunset/960x0.jpg?format=jpg&width=960",
+      image: require("../assets/airline-3.jpg"),
     },
     {
       data: [
@@ -40,8 +37,7 @@ export const resultStore = defineStore("result", () => {
         { key: "Duración", val: "200 min" },
       ],
       airline: "Aerogal",
-      image:
-        "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/12/avion-united-airlanes-2551507.jpg?tf=3840x",
+      image: require("../assets/airline-4.jpg"),
     },
   ]);
 

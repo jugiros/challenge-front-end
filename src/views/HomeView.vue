@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { helpers, required } from "@vuelidate/validators";
 import { citiesStore } from "@/store/cities";
@@ -124,11 +124,11 @@ const clear = () => {
 };
 
 const search = () => {
-  v$.value.$validate().then(res => {
+  v$.value.$validate().then((res) => {
     if (res) {
-      router.push('/results')
+      router.push("/results");
     }
-  })
+  });
 };
 </script>
 

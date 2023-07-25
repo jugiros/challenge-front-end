@@ -31,7 +31,7 @@
 const items = [
   { title: "Inicio", to: "/" },
   { title: "Resultados", to: "/results" },
-  { title: "Error", to: "/error-page" },
+  { title: "Página de Error", to: "/error-page" },
 ];
 </script>
 
